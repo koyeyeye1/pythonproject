@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import shutil
 import pytest
 import os
@@ -17,17 +18,17 @@ if __name__ == '__main__':
     if REPORT_TYPE == 'allure':
         pytest.main([
             '-s', '-v',
-            '--alluredir=./report/temp',  # Éú³É Allure Ô­Ê¼½á¹û
+            '--alluredir=./report/temp',  # ç”Ÿæˆ Allure åŸå§‹ç»“æœ
             './testcase',
             '--clean-alluredir',
             '--junitxml=./report/results.xml'
         ])
 
-        # ¸´ÖÆ»·¾³ÅäÖÃÎÄ¼ş£¨±£³Ö²»±ä£©
+        # å¤åˆ¶ç¯å¢ƒé…ç½®æ–‡ä»¶ï¼ˆä¿æŒä¸å˜ï¼‰
         shutil.copy('./environment.xml', './report/temp')
 
-        # ¹Ø¼üĞŞ¸Ä£ºÓÃ allure generate Éú³É¾²Ì¬±¨¸æ£¬Ìæ´ú allure serve
-        # Éú³Éµ½ ./report/allure-report Ä¿Â¼£¨Óë Jenkins ÅäÖÃµÄ Report path ¶ÔÓ¦£©
+        # å…³é”®ä¿®æ”¹ï¼šç”¨ allure generate ç”Ÿæˆé™æ€æŠ¥å‘Šï¼Œæ›¿ä»£ allure serve
+        # ç”Ÿæˆåˆ° ./report/allure-report ç›®å½•ï¼ˆä¸ Jenkins é…ç½®çš„ Report path å¯¹åº”ï¼‰
         os.system(f'allure generate ./report/temp -o ./report/allure-report --clean')
 
     elif REPORT_TYPE == 'tm':
