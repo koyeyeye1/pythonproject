@@ -17,3 +17,6 @@ def read_csv(filepath, col_name):
         return data
     except Exception:
         logs.error(str(traceback.format_exc()))
+
+# if __name__ == '__main__':
+#     print(read_csv('D:\Test_course\pythonproject\data\login_data.csv',1))
