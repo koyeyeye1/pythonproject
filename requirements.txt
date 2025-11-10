@@ -1,0 +1,17 @@
+pytest==6.2.5
+allure-pytest==2.9.45
+allure_python_commons==2.9.45
+requests==2.31.0
+PyYAML==6.0.1
+jsonpath==0.82
+pandas==1.5.3
+paramiko==2.12.0
+faker==19.1.0
+PyMySQL==1.1.0
+SQLAlchemy==1.4.46
+redis==4.5.5
+pymongo==4.3.3
+clickhouse_sqlalchemy==0.2.4
+Flask==2.2.3
+PyQt5==5.15.9
+urllib3==1.26.16  # 避免 requests 依赖的 urllib3 版本过高
