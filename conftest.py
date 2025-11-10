@@ -36,12 +36,11 @@ def generate_test_summary(terminalreporter):
     duration = time.time() - terminalreporter._sessionstarttime
 
     # 部署到Jenkin持续集成当中去运行
-    oper=PJenkins()
-    res=oper.report_success_or_fail()
-    res_json_str = json.dumps(res, ensure_ascii=False)
-    report = re.search(r'http://127.0.0.1:8080/job/pythonproject/(.*?)/allure', res_json_str).group(0)
-    # local_path = r"D:\Test_course\pythonproject\report\allureReport\index.html"
-    # report = f"file:///{local_path.replace(os.sep, '/')}"
+    # oper=PJenkins()
+    # res=oper.report_success_or_fail()
+    # res_json_str = json.dumps(res, ensure_ascii=False)
+    # report = re.search(r'http://127.0.0.1:8080/job/pythonproject/(.*?)/allure', res_json_str).group(0)
+    report="www.baidu.com"
 
     summary = f"""
     自动化测试结果，通知如下，请着重关注测试失败的接口，具体执行结果如下：

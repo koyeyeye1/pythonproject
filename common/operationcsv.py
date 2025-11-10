@@ -18,5 +18,8 @@ def read_csv(filepath, col_name):
     except Exception:
         logs.error(str(traceback.format_exc()))
 
-# if __name__ == '__main__':
-#     print(read_csv('D:\Test_course\pythonproject\data\login_data.csv',1))
+if __name__ == '__main__':
+    # 取 vno 列的数据
+    print(read_csv(r'D:\Test_course\pythonproject\data\vehicleNo.csv', 'vno'))
+    # 或取 color 列的数据
+    print(read_csv(r'D:\Test_course\pythonproject\data\vehicleNo.csv', 'color'))
