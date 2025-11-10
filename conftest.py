@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os
 import time
 
 import pytest
@@ -33,9 +34,10 @@ def generate_test_summary(terminalreporter):
     duration = time.time() - terminalreporter._sessionstarttime
 
     # 部署到Jenkin持续集成当中去运行
-    # oper=PJenkins()
-    # report=oper.report_success_or_fail()
-    report="www.baidu.com"
+    oper=PJenkins()
+    report=oper.report_success_or_fail()
+    # local_path = r"D:\Test_course\pythonproject\report\allureReport\index.html"
+    # report = f"file:///{local_path.replace(os.sep, '/')}"
 
     summary = f"""
     自动化测试结果，通知如下，请着重关注测试失败的接口，具体执行结果如下：

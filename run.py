@@ -15,6 +15,7 @@ if __name__ == '__main__':
     #     shutil.copy('./environment.xml', './report/temp')
     #     os.system(f'allure serve ./report/temp')
 
+    # 如果要用jenkins就用下面这段代码 否则服务器会卡住而不进行卡一步
     if REPORT_TYPE == 'allure':
         pytest.main([
             '-s', '-v',
