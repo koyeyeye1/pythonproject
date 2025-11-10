@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import json
 import os
 import re
 import time
@@ -37,7 +38,8 @@ def generate_test_summary(terminalreporter):
     # 部署到Jenkin持续集成当中去运行
     oper=PJenkins()
     res=oper.report_success_or_fail()
-    report = re.search(r'http://127.0.0.1:8080/job/pythonproject/(.*?)/allure', res).group(0)
+    res_json_str = json.dumps(res, ensure_ascii=False)
+    report = re.search(r'http://127.0.0.1:8080/job/pythonproject/(.*?)/allure', res_json_str).group(0)
     # local_path = r"D:\Test_course\pythonproject\report\allureReport\index.html"
     # report = f"file:///{local_path.replace(os.sep, '/')}"
 
