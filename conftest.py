@@ -39,7 +39,7 @@ def generate_test_summary(terminalreporter):
     oper=PJenkins()
     res=oper.report_success_or_fail()
     res_json_str = json.dumps(res, ensure_ascii=False)
-    report = re.search(r'http://127.0.0.1:8080/job/pythonproject/allure', res_json_str).group(0)
+    report = re.search(r'http://127.0.0.1:8080/job/pythonproject/(.*?)/allure', res_json_str).group(0)
     # local_path = r"D:\Test_course\pythonproject\report\allureReport\index.html"
     # report = f"file:///{local_path.replace(os.sep, '/')}"
 
