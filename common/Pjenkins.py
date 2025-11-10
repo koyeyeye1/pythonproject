@@ -141,7 +141,7 @@ class PJenkins(object):
         # 生成 Allure 报告地址（直接拼接，无需正则）
         jenkins_url = self.conf.get_section_jenkins('url').rstrip('/')  # 移除可能的斜杠
         build_number = self.get_job_number()
-        report_line = f"{jenkins_url}/job/{self.job_name}/{build_number}/allure/"
+        report_line = f"{jenkins_url}/job/{self.job_name}/{build_number}/(.*?)/allure/"
 
         # 返回统计结果
         return {
